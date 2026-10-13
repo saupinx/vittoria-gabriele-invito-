@@ -254,3 +254,44 @@
   background: rgba(255,255,255,0.88) !important;
   box-shadow: 0 10px 26px rgba(0,0,0,0.10) !important;
 }
+/* ===== DRESS CODE — WHITE GLASS BACKGROUND ===== */
+
+.main .dress-minimal {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Полупрозрачный белый фон под заголовком и описанием */
+.main .dress-minimal::before {
+  content: "";
+  position: absolute;
+
+  inset: auto;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+
+  height: clamp(310px, 80vw, 365px);
+
+  background: rgba(255, 255, 255, 0.78);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.06);
+
+  filter: none;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Текст поверх белого фона */
+.main .dress-minimal > * {
+  position: relative;
+  z-index: 1;
+}
